@@ -4,6 +4,8 @@
 
 ![Demo](https://github.com/toushalipal6991/Google-Analytics-Customer-Revenue-Prediction/blob/main/gacrp-prod.gif)
 
+## Self-written Medium blog: [Google Analytics Customer Revenue Prediction](https://medium.com/@toushalipal6991/google-analytics-customer-revenue-prediction-28c9ea9e371b)
+
 ## Aim of this Project
 - This project aims to predict revenue for a set of customers for a time period in the future.
 - Different machine learning & deep learning techniques were used.
