@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GACRP</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<style>
+.column {
+  float: left;
+  width: 25%;
+}
+.row {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0;
+  margin-left: 0;
+}
+</style>
+
+<body style="color: white;background-color: black;overflow-y: hidden;">
+<h1 class="text-center">Revenue Prediction for GStore Customers</h1>
+<div class="row">
+  <div class="column" style="background-color:#4285F4;">
+  	<img src="static/pic-new.PNG" style="height:40%;width:100%;margin-top: 50%;">
+  </div>
+  <div class="column" style="background-color:#DB4437;">
+  	<br><br>
+    <div>
+		<form class="text-center" action="/predict" method="post" enctype="multipart/form-data">
+			<ul style="list-style-type: none;margin-top: 40vh">
+				<li style="margin-left: 5%;">
+					<input id="chooseimg" class="text-center" type="file" name="query-file" class="form-control">
+				</li>
+			</ul>
+	</div>
+  </div>
+  <div class="column" style="background-color:#F4B400;">
+  			<br><br>
+  			<ul style="list-style-type: none;margin-top: 40vh">
+			    <li>
+					<input id="submit-gacrp" type="submit" class="btn btn-info" value="Predict Revenue" style="border: 1px solid white;color: black;background-color: wheat;">
+				</li>
+			</ul>
+		</form>
+  </div>
+  <div class="column" style="background-color:#0F9D58;">
+  	<br><br>
+    {% for i in prediction %}
+		<p class="text-center" id="predtext">Predicted Revenue(s): {{i}}</p>
+	{% endfor %}
+  </div>
+</div>
+</body>
+
+<script>
+	$("#chooseimg").on('click',function(){
+        $("#predtext").hide();
+	});
+	$("#submit-gacrp").on('click',function(){
+		$( window ).load(function() {
+		  $("#predtext").show();
+		});
+		
+	});
+</script>
+</html>
+
+<!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_four_columns -->
+<!-- https://stackoverflow.com/questions/51669102/how-to-pass-data-to-html-page-using-flask -->
